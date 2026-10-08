@@ -1,0 +1,10 @@
+extends: base.yaml
+experiment:
+  name: dinov3_vitl16_head_pose
+  output_dir: outputs/head_pose/dinov3_vitl16
+model:
+  kind: dino
+  timm_model: vit_large_patch16_dinov3.lvd1689m
+  pretrained: true
+  pooling: cls_avg_concat
+  pretrained_checkpoint: ''

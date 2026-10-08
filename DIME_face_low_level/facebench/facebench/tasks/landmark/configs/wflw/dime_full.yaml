@@ -1,0 +1,8 @@
+extends: base.yaml
+backbone:
+  name: dime
+  dime_source: ../../DIME_VIT
+  checkpoint: ''
+  dime_model: ''
+experiment:
+  output_dir: outputs/wflw/dime

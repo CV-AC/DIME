@@ -1,0 +1,15 @@
+extends: ../base.yaml
+dataset:
+  name: celebamask_hq
+  root: ../parsing_dataset/CelebAMask-HQ
+  num_classes: 19
+  mask_cache_dir: data_cache/celebamask_hq/masks
+  expected_counts:
+    train: 24183
+    val: 2993
+    test: 2824
+  audit_file: data_cache/celebamask_hq/audit.json
+  manifest_dir: data_cache/manifests
+  use_manifests: true
+augmentation:
+  warp_factor: 0.0

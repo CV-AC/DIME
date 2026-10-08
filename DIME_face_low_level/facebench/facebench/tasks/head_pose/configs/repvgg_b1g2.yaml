@@ -1,0 +1,10 @@
+extends: base.yaml
+experiment:
+  name: repvgg_b1g2_head_pose
+  output_dir: outputs/head_pose/repvgg_b1g2
+model:
+  kind: repvgg
+  repo: third_party/sixdrepnet
+  backbone_name: RepVGG-B1g2
+  pretrained_checkpoint: RepVGG-B1g2-train.pth
+  expected_pretrained_sha256: 487c633c0161f48db2bd0aa698ef0b0b294dd7ff534305915bd2172cf1030ca9

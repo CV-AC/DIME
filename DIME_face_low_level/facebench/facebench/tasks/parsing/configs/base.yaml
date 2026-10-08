@@ -1,0 +1,75 @@
+experiment:
+  seed: 3407
+  output_dir: outputs/face_parsing
+  resume: ''
+  save_interval: 20
+  keep_periodic_checkpoints: false
+  log_interval: 50
+model:
+  input_size: 448
+  output_size: 512
+  head_channels: 768
+  dropout: 0.1
+backbone:
+  name: farl
+  checkpoint: weights/FaRL-Base-Patch16-LAIONFace20M-ep64.pth
+  farl_source: third_party/farl
+  dime_source: ../../DIME_VIT
+  dime_model: ''
+  timm_model: vit_base_patch16_224.dino
+  pretrained: true
+loader:
+  batch_size_per_gpu: 5
+  eval_batch_size_per_gpu: 5
+  workers_per_gpu: 4
+  pin_memory: true
+  persistent_workers: true
+  prefetch_factor: 2
+protocol:
+  epochs: 300
+  optimizer: adamw
+  encoder_lr: 0.0001
+  head_lr: 0.001
+  weight_decay: 1.0e-05
+  betas:
+  - 0.9
+  - 0.999
+  eps: 1.0e-08
+  scheduler: multistep
+  milestones:
+  - 200
+  gamma: 0.1
+  ema_decay: 0.999
+  selection_split: val
+  evaluation_interval: 1
+  test_after_training: true
+  gradient_clip_norm: 0.0
+augmentation:
+  canvas_size: 512
+  shift_sigma: 0.01
+  rotation_sigma: 0.314
+  scale_sigma: 0.1
+  warp_factor: 0.0
+  gray_probability: 0.1
+  blur_scale: 0.01
+runtime:
+  amp_enabled: false
+  amp_dtype: fp16
+  ddp:
+    broadcast_buffers: true
+    find_unused_parameters: false
+    gradient_as_bucket_view: true
+    static_graph: true
+    bucket_cap_mb: 50
+evaluation:
+  checkpoint: ''
+  split: test
+  use_ema: true
+  save_predictions: false
+wandb:
+  enabled: false
+  mode: online
+  entity: ''
+  project: DIME_face_parsing
+  api_key: ''
+  init_timeout: 120

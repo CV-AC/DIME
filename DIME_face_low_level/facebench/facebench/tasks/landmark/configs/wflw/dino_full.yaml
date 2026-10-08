@@ -1,0 +1,8 @@
+extends: base.yaml
+backbone:
+  name: dino
+  timm_model: vit_large_patch16_dinov3.lvd1689m
+  pretrained: true
+  checkpoint: ''
+experiment:
+  output_dir: outputs/wflw/dino

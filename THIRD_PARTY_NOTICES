@@ -1,0 +1,110 @@
+DIME_face_low_level/facebench/third_party/farl/farl/__init__.py
+Copyright (c) Microsoft Corporation.
+Licensed under the MIT License.
+
+DIME_face_low_level/facebench/third_party/farl/farl/datasets/__init__.py
+Copyright (c) Microsoft Corporation.
+Licensed under the MIT License.
+
+DIME_face_low_level/facebench/third_party/farl/farl/datasets/aflw.py
+Copyright (c) Microsoft Corporation.
+Licensed under the MIT License.
+
+DIME_face_low_level/facebench/third_party/farl/farl/datasets/celebamask_hq.py
+Copyright (c) Microsoft Corporation.
+Licensed under the MIT License.
+
+DIME_face_low_level/facebench/third_party/farl/farl/datasets/ibug300w.py
+Copyright (c) Microsoft Corporation.
+Licensed under the MIT License.
+
+DIME_face_low_level/facebench/third_party/farl/farl/datasets/lapa.py
+Copyright (c) Microsoft Corporation.
+Licensed under the MIT License.
+
+DIME_face_low_level/facebench/third_party/farl/farl/datasets/prepare.py
+Copyright (c) Microsoft Corporation.
+Licensed under the MIT License.
+
+DIME_face_low_level/facebench/third_party/farl/farl/datasets/wflw.py
+Copyright (c) Microsoft Corporation.
+Licensed under the MIT License.
+
+DIME_face_low_level/facebench/third_party/farl/farl/experiments/__init__.py
+Copyright (c) Microsoft Corporation.
+Licensed under the MIT License.
+
+DIME_face_low_level/facebench/third_party/farl/farl/experiments/face_alignment/__init__.py
+Copyright (c) Microsoft Corporation.
+Licensed under the MIT License.
+
+DIME_face_low_level/facebench/third_party/farl/farl/experiments/face_alignment/network.py
+Copyright (c) Microsoft Corporation.
+Licensed under the MIT License.
+
+DIME_face_low_level/facebench/third_party/farl/farl/experiments/face_alignment/scorer.py
+Copyright (c) Microsoft Corporation.
+Licensed under the MIT License.
+from https://github.com/HRNet/HRNet-Facial-Landmark-Detection/issues/6#issuecomment-503898737
+
+DIME_face_low_level/facebench/third_party/farl/farl/experiments/face_alignment/task.py
+Copyright (c) Microsoft Corporation.
+Licensed under the MIT License.
+
+DIME_face_low_level/facebench/third_party/farl/farl/experiments/face_parsing/__init__.py
+Copyright (c) Microsoft Corporation.
+Licensed under the MIT License.
+
+DIME_face_low_level/facebench/third_party/farl/farl/experiments/face_parsing/network.py
+Copyright (c) Microsoft Corporation.
+Licensed under the MIT License.
+
+DIME_face_low_level/facebench/third_party/farl/farl/experiments/face_parsing/scorer.py
+Copyright (c) Microsoft Corporation.
+Licensed under the MIT License.
+
+DIME_face_low_level/facebench/third_party/farl/farl/experiments/face_parsing/task.py
+Copyright (c) Microsoft Corporation.
+Licensed under the MIT License.
+
+DIME_face_low_level/facebench/third_party/farl/farl/network/__init__.py
+Copyright (c) Microsoft Corporation.
+Licensed under the MIT License.
+
+DIME_face_low_level/facebench/third_party/farl/farl/network/common.py
+Copyright (c) Microsoft Corporation.
+Licensed under the MIT License.
+
+DIME_face_low_level/facebench/third_party/farl/farl/network/ext/p2i_ops/__init__.py
+Copyright (c) Microsoft Corporation.
+Licensed under the MIT License.
+
+DIME_face_low_level/facebench/third_party/farl/farl/network/farl/__init__.py
+Copyright (c) Microsoft Corporation.
+Licensed under the MIT License.
+
+DIME_face_low_level/facebench/third_party/farl/farl/network/farl/model.py
+Copyright (c) Microsoft Corporation.
+Licensed under the MIT License.
+
+DIME_face_low_level/facebench/third_party/farl/farl/network/geometry.py
+Copyright (c) Microsoft Corporation.
+Licensed under the MIT License.
+
+DIME_face_low_level/facebench/third_party/farl/farl/network/mmseg.py
+Copyright (c) Microsoft Corporation.
+Licensed under the MIT License.
+
+DIME_face_low_level/facebench/third_party/farl/farl/network/transformers.py
+Copyright (c) Microsoft Corporation.
+Licensed under the MIT License.
+
+DIME_face_low_level/facebench/third_party/farl/farl/network/viz.py
+Copyright (c) Microsoft Corporation.
+Licensed under the MIT License.
+
+DIME_face_low_level/facebench/third_party/sixdrepnet/sixdrepnet/backbone/se_block.py
+  https://openaccess.thecvf.com/content_cvpr_2018/html/Hu_Squeeze-and-Excitation_Networks_CVPR_2018_paper.html
+
+DIME_face_low_level/facebench/third_party/sixdrepnet/sixdrepnet/create_filename_list.py
+https://github.com/shahroudy

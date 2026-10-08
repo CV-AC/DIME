@@ -1,0 +1,10 @@
+extends: base.yaml
+experiment:
+  name: mae_vitl16_head_pose
+  output_dir: outputs/head_pose/mae_vitl16
+model:
+  kind: mae
+  timm_model: vit_large_patch16_224.mae
+  pretrained: true
+  pooling: global_avg
+  pretrained_checkpoint: ''

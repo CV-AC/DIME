@@ -1,0 +1,114 @@
+model:
+  name: vit_large_patch16
+  img_size: 224
+  mask_ratio: 0.5
+  mask_cell_size: 1
+  shared_mask: true
+  range_mask_ratio: 0.0
+  mask_strategy: single
+  mask_block_sizes:
+  - 1
+  block_probs: null
+  pos_encoding: rope
+  attention_mode: auto
+  gated_attention: false
+  gate_init_bias: 2.0
+  drop_rate: 0.0
+  attn_drop_rate: 0.0
+  drop_path_rate: 0.0
+  use_checkpoint: true
+loss:
+  norm_pix_loss: true
+  lambda_diff: 0.5
+  sobel_q: 0.5
+  lambda_edds: 1.0
+  edds_warmup_epochs: 20
+  edds_version: v2
+data:
+  pair_sampling: identity_uniform
+  path: data/pretrain.lmdb
+  batch_size: 64
+  num_workers: 4
+  pin_memory: true
+  subset_ratio: 1.0
+  transform:
+    train_crop_scale:
+    - 0.2
+    - 1.0
+    train_crop_ratio:
+    - 0.75
+    - 1.3333333333333333
+    train_hflip_prob: 0.5
+    eval_crop_pct: 0.875
+    interpolation: bicubic
+    antialias: true
+    mean:
+    - 0.485
+    - 0.456
+    - 0.406
+    std:
+    - 0.229
+    - 0.224
+    - 0.225
+train:
+  epochs: 500
+  high_res_start_epoch: 400
+  high_res_size: 512
+  stop_epoch: null
+  accum_iter: 4
+  seed: 42
+  amp_dtype: bf16
+  grad_clip_norm: 5.0
+  log_freq: 100
+optimizer:
+  name: adamw
+  lr: null
+  base_lr: 8.0e-05
+  reference_batch_size: 256
+  weight_decay: 0.05
+  betas:
+  - 0.9
+  - 0.95
+  eps: 1.0e-06
+scheduler:
+  warmup_epochs: 40
+  min_lr: 0.0
+compile:
+  enabled: false
+  mode: default
+  dynamic: false
+  fullgraph: false
+distributed:
+  nodes: 8
+  gpus_per_node: 8
+  backend: nccl
+  find_unused_parameters: false
+checkpoint:
+  output_dir: outputs/dime_vit_large_patch16
+  resume: auto
+  init_checkpoint: null
+  save_freq: 20
+  keep_last_n: 3
+  best_metric: mse
+  maximize_best_metric: false
+eval:
+  enabled: true
+  freq: 20
+  num_pairs: 32
+  batch_size: 16
+  num_workers: 4
+  seed: 0
+  num_visuals: 8
+wandb:
+  enabled: false
+  project: dime-vit
+  entity: ''
+  run_name: vit-large-patch16
+  tags:
+  - dime
+  - vit
+  - pretrain
+  - large
+  watch_model: false
+  watch_log: gradients
+  watch_freq: 1000

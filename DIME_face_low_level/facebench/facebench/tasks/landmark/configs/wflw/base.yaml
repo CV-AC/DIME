@@ -1,0 +1,65 @@
+seed: 0
+wandb:
+  entity: ''
+  project: DIME_landmark
+  api_key: ''
+  enabled: false
+dataset:
+  root: ../landmark_dataset/WFLW
+  audit_file: data_audit/wflw_audit.json
+auxiliary_training:
+  enabled: false
+augmentation:
+  preset: farl_wflw
+  shift_sigma: 0.05
+  rot_sigma: 0.174
+  scale_sigma: 0.1
+  scale_mu: 0.8
+  warp_factor: 0.0
+  noise_fusion_probability: 0.5
+model:
+  input_size: 448
+  canvas_size: 512
+  num_landmarks: 98
+  pyramid_channels: 768
+  head_channels: 768
+  objective:
+    name: farl
+    heatmap_size: 128
+    heatmap_radius: 5.0
+protocol:
+  selection_protocol: farl_official_test_best
+  eval_interval: 1
+  batch_size_per_gpu: 5
+  eval_batch_size_per_gpu: 5
+  effective_batch_size: 40
+  num_workers: 4
+  epochs: 150
+  encoder_lr: 0.0001
+  head_lr: 0.01
+  ema_decay: 0.999
+  optimizer:
+    name: adamw
+    betas:
+    - 0.9
+    - 0.999
+    eps: 1.0e-08
+    weight_decay: 1.0e-05
+    amsgrad: false
+    momentum: 0.9
+    dampening: 0.0
+    nesterov: false
+  scheduler:
+    name: multistep
+    warmup_epochs: 0
+    warmup_start_factor: 0.01
+    milestones:
+    - 100
+    gamma: 0.1
+    min_lr_factor: 0.01
+  amp: false
+  amp_dtype: bf16
+experiment:
+  output_dir: outputs/wflw/base
+evaluation:
+  checkpoint: ''

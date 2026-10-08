@@ -1,0 +1,8 @@
+extends: base.yaml
+backbone:
+  name: mae
+  timm_model: vit_large_patch16_224.mae
+  pretrained: true
+  checkpoint: ''
+experiment:
+  output_dir: outputs/wflw/mae

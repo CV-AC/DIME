@@ -1,0 +1,43 @@
+model:
+  name: vit_base_patch16
+  img_size: 224
+  mask_cell_size: 1
+  gated_attention: false
+loss:
+  edds_version: v2
+  edds_warmup_epochs: 0
+data:
+  path: data/pretrain.lmdb
+  batch_size: 32
+  high_res_batch_size: 8
+  subset_ratio: 0.0002
+  num_workers: 4
+train:
+  epochs: 3
+  high_res_start_epoch: 2
+  high_res_size: 512
+  accum_iter: 1
+  log_freq: 5
+scheduler:
+  warmup_epochs: 1
+compile:
+  enabled: false
+distributed:
+  nodes: 8
+  gpus_per_node: 8
+checkpoint:
+  output_dir: outputs/smoke_4gpu
+  resume: auto
+  save_freq: 1
+  keep_last_n: 1
+  best_metric: loss
+eval:
+  enabled: true
+  freq: 1
+  num_pairs: 2
+  batch_size: 2
+  num_workers: 0
+  num_visuals: 1
+wandb:
+  enabled: false
+  entity: ''

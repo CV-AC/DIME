@@ -1,0 +1,9 @@
+extends: base.yaml
+experiment:
+  name: dime_full_head_pose
+  output_dir: outputs/head_pose/dime
+model:
+  kind: dime
+  dime_source: ../../DIME_VIT
+  pretrained_checkpoint: ''
+  dime_model: ''

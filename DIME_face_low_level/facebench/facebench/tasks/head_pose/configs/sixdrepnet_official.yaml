@@ -1,0 +1,9 @@
+extends: base.yaml
+experiment:
+  name: sixdrepnet_official_evaluation
+  output_dir: outputs/head_pose/sixdrepnet_official
+model:
+  kind: sixdrepnet_official
+  repo: third_party/sixdrepnet
+  official_checkpoint: ''
+  deploy: true

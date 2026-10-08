@@ -1,0 +1,8 @@
+extends: base.yaml
+experiment:
+  output_dir: outputs/lapa/dime
+backbone:
+  name: dime
+  checkpoint: weights/dime_pretrain.pth
+  dime_source: ../../DIME_VIT
+  dime_model: ''

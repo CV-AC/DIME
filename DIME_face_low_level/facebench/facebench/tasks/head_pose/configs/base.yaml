@@ -1,0 +1,80 @@
+seed: 0
+resume: ''
+wandb:
+  enabled: false
+  entity: ''
+  project: DIME_head_pose
+  api_key: ''
+  api_key_env: WANDB_API_KEY
+  mode: online
+experiment:
+  name: controlled_head_pose
+  output_dir: outputs/head_pose/base
+  seeds:
+  - 0
+data:
+  backend: lmdb
+  train_root: ../landmark_dataset/300W_LP
+  train_manifest: ../datasets/head_pose/manifests/300wlp_train.jsonl
+  train_lmdb: ../datasets/head_pose/packed/300wlp_train.lmdb
+  aflw2000_root: ../landmark_dataset/AFLW2000
+  aflw2000_manifest: ../datasets/head_pose/manifests/aflw2000_test.jsonl
+  aflw2000_lmdb: ../datasets/head_pose/packed/aflw2000_test.lmdb
+  biwi_processed_root: ../datasets/head_pose/processed/BIWI
+  biwi_manifest: ../datasets/head_pose/processed/BIWI/biwi_test.jsonl
+  biwi_lmdb: ../datasets/head_pose/packed/biwi_test.lmdb
+protocol:
+  name: controlled_6drepnet_strong_v1
+  controlled_main_table: true
+  input_size: 224
+  test_resize: 256
+  max_abs_angle_degrees: 99
+  epochs: 80
+  batch_size_per_gpu: 8
+  effective_batch_size: 64
+  num_workers: 8
+  encoder_lr: 0.0001
+  encoder_layer_decay: 0.75
+  head_lr: 0.0001
+  optimizer:
+    name: adamw
+    betas:
+    - 0.9
+    - 0.999
+    eps: 1.0e-08
+    weight_decay: 0.05
+    exclude_bias_and_norm_from_weight_decay: true
+  scheduler:
+    name: cosine
+    warmup_epochs: 5
+    warmup_start_factor: 0.01
+    min_lr_factor: 0.01
+  loss: SO3_geodesic
+  ema_decay: 0.999
+  amp: true
+  amp_dtype: bf16
+  grad_clip_norm: 1.0
+  save_every: 10
+  log_every: 100
+augmentation:
+  random_resized_crop_scale:
+  - 0.8
+  - 1.0
+  random_resized_crop_ratio:
+  - 0.75
+  - 1.3333333333333333
+  horizontal_flip_probability: 0.5
+  blur_probability: 0.05
+evaluation:
+  checkpoint: ''
+  selection: fixed_final_epoch_ema
+  batch_size: 64
+  batch_size_per_gpu: 64
+  num_workers_per_gpu: 2
+  test_time_augmentation: false
+head:
+  type: linear
+  hidden_dim: 512
+  dropout: 0.0
+finetuning:
+  encoder_mode: full

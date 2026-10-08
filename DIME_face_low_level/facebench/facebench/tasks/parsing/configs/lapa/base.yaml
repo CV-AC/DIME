@@ -1,0 +1,14 @@
+extends: ../base.yaml
+dataset:
+  name: lapa
+  root: ../parsing_dataset/LaPa
+  num_classes: 11
+  expected_counts:
+    train: 18176
+    val: 2000
+    test: 2000
+  audit_file: data_cache/lapa_audit.json
+  manifest_dir: data_cache/manifests
+  use_manifests: true
+augmentation:
+  warp_factor: 0.8

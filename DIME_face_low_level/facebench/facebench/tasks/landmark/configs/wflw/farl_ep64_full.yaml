@@ -1,0 +1,7 @@
+extends: base.yaml
+backbone:
+  name: farl
+  farl_source: third_party/farl
+  checkpoint: checkpoints/FaRL-Base-Patch16-LAIONFace20M-ep64.pth
+experiment:
+  output_dir: outputs/wflw/farl_ep64
