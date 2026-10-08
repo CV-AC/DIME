@@ -1,18 +1,4 @@
-<div align="center">
-
-# DIME
-
-### Scaling Facial Representation Learning<br>via Differential Masked Autoencoding
-
-Hao Yu · Haoyu Chen · Hui Wei · Yan Jiang · Nicu Sebe · Guoying Zhao
-
-ELLIS Institute Finland & CMVS, University of Oulu · University of Trento
-
-[Project Page](https://cv-ac.github.io/DIME_page/) · [Video Demos](https://cv-ac.github.io/DIME_page/#demo) · [Getting Started](#getting-started) · [Citation](#citation)
-
-**Learn how a face changes, not only how it looks.**
-
-</div>
+# DIME: Scaling Facial Representation Learning via Differential Masked Autoencoding
 
 ![DIME overview](assets/teaser.png)
 
