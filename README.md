@@ -11,13 +11,10 @@ See the [project page](https://cv-ac.github.io/DIME_page/) for results.
 
 ## Demos
 
-<a href="https://cv-ac.github.io/DIME_page/media/dime-demo-interview.mp4"><img src="assets/demo-interview.webp" width="100%" alt="DIME demo: interview sequence"></a>
+https://github.com/user-attachments/assets/decb1568-6403-448b-9403-0e188d04a249
 
 
-Uploading DIME_demo_interview.mp4…
-
-
-Click the preview to watch. Panels: input, head pose, landmarks, face parsing,
+Panels: input, head pose, landmarks, face parsing,
 and action units.
 
 ## Method
