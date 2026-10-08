@@ -11,7 +11,7 @@ See the [project page](https://cv-ac.github.io/DIME_page/) for results.
 
 ## Demos
 
-https://github.com/user-attachments/assets/decb1568-6403-448b-9403-0e188d04a249
+https://github.com/user-attachments/assets/fbee6852-f95e-409f-aea4-9a94e119d43a
 
 
 Panels: input, head pose, landmarks, face parsing,
@@ -21,7 +21,7 @@ and action units.
 
 ![Identity-paired reconstruction and differential supervision](assets/method.png)
 
-Reciprocal token mixing and source-isolated attention reconstruct both faces.
+The mixed architecture is inspired by [MixMAE](https://arxiv.org/abs/2205.13137), but DIME goes differential: it models how identity-paired faces differ, not only how each one looks.
 EDDS complements RGB reconstruction and gradient-orientation recovery.
 Only the encoder is retained for downstream tasks.
 
